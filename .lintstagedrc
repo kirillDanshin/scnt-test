@@ -1,0 +1,9 @@
+{
+	linters: {
+		"frontend/public/src/**/*.js": "eslint",
+		"frontend/public/src/**/*.jsx": "eslint",
+		"frontend/public/src/**/*.css": "stylelint --syntax=scss"
+	},
+	"gitDir": "../../",
+	verbose: true
+}

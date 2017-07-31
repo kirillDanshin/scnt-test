@@ -1,0 +1,7 @@
+node_modules
+*.log
+dist
+/scnt-static
+flow-typed
+*.css.json
+*.pcss.json
