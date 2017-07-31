@@ -1,0 +1,21 @@
+.menu-container {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.menu-wrapper {
+	white-space: nowrap;
+	padding: 15px;
+}
+
+.item {
+	padding: 0 20px;
+	white-space: nowrap;
+	display: inline-block;
+	cursor: pointer;
+	@mixin transitionAll;
+
+	&:hover {
+		color: $brandColor;
+	}
+}

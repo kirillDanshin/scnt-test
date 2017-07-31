@@ -68,7 +68,7 @@ const config = {
 			inject: isDevServer,
 		}),
 		new webpack.LoaderOptionsPlugin({
-			test: /\.css$/,
+			test: /\.p?css$/,
 			options: {
 				postcss: {
 					plugins: [
@@ -124,7 +124,7 @@ const config = {
 					? ['react-hot-loader/webpack', 'babel-loader']
 					: ['babel-loader'],
 			}, {
-				test: /\.s?css$/,
+				test: /\.p?css$/,
 				exclude: /react-images-uploader/,
 				use: isDevServer
 					? [
@@ -157,8 +157,11 @@ const config = {
 				test: /\.gif$/,
 				loader: getLoader('file-loader?name=', 'images/[hash].[ext]'),
 			}, {
-				test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+				test: /fonts[^.]+\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
 				loader: getLoader('file-loader?name=', 'fonts/[hash].[ext]'),
+			}, {
+				test: /\.svg$/,
+				loader: getLoader('file-loader?name=', 'images/[hash].[ext]'),
 			},
 		],
 	},

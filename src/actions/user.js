@@ -1,7 +1,7 @@
 import reducers from '@reducers'
 
 export const setName = (name) => {
-	reducers.hello.put({ name })
+	reducers.user.put({ name })
 }
 
 export default {

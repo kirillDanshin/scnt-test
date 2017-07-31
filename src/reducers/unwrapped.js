@@ -1,7 +1,11 @@
-import * as hello from './hello'
+import * as user from './user'
+import * as cart from './cart'
+import * as categories from './categories'
 
 const reducers = {
-	hello,
+	user,
+	cart,
+	categories,
 }
 
 export default reducers

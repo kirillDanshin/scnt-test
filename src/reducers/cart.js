@@ -1,7 +1,10 @@
 import { fromJS } from 'immutable'
 
 export const initialState = fromJS({
-	name: 'World',
+	items: {
+		list: [],
+		count: (Math.random() * 10) | 0 + 3,
+	},
 })
 
 export const put = (state, payload) => (
