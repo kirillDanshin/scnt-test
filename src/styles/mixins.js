@@ -1,7 +1,8 @@
 module.exports = {
 	maxWidth: {
 		'max-width': '1080px',
-		padding: '0 20px',
+		'padding-left': '20px',
+		'padding-right': '20px',
 	},
 
 	placeholderColor(mixin, color) {
