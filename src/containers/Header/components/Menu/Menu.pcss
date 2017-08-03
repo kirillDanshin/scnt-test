@@ -6,6 +6,10 @@
 .menu-wrapper {
 	white-space: nowrap;
 	padding: 15px;
+
+	@media (width > $mobileMax) {
+		@mixin maxWidth;
+	}
 }
 
 .item {
@@ -14,6 +18,10 @@
 	display: inline-block;
 	cursor: pointer;
 	@mixin transitionAll;
+
+	@media (width <= $tabletMax) {
+		padding: 0 15px;
+	}
 
 	&:hover {
 		color: $brandColor;
