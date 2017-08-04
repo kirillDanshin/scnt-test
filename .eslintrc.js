@@ -11,6 +11,7 @@ module.exports = {
   "rules": {
     "indent": [2, "tab"],
     "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
+	"import/prefer-default-export": 0,
     "new-cap": 0,
     "react/prop-types": 0,
     "react/jsx-indent": [2, "tab"],

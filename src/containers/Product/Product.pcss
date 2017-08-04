@@ -1,0 +1,50 @@
+.product {
+	@mixin maxWidth;
+
+	padding: 0 45px;
+	display: flex;
+	width: 100%;
+
+	& > div {
+		width: 50%;
+	}
+}
+
+.heading-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.heading {
+	margin: 0;
+	margin-bottom: 5px;
+	font-size: 24px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.title {
+	margin: 0;
+	margin-bottom: 5px;
+	color: #262626;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.subtitle {
+	margin: 0;
+	color: #262626;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.reviews-count {
+	color: #9b9b9b;
+	font-size: 12px;
+	font-weight: 600;
+	width: 100%;
+	text-align: right;
+	margin-top: 7px;
+}

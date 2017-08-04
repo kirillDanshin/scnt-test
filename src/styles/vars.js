@@ -1,5 +1,5 @@
 module.exports = {
-	brandColor: '#ff2985',
+	brandColor: '#ff408e',
 
 	mobileMax: '544px',
 	tabletMax: '768px',

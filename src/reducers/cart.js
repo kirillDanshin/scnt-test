@@ -6,7 +6,3 @@ export const initialState = fromJS({
 		count: (Math.random() * 10) | 0 + 3,
 	},
 })
-
-export const put = (state, payload) => (
-	state.set('name', payload.name)
-)

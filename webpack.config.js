@@ -125,7 +125,7 @@ const config = {
 					: ['babel-loader'],
 			}, {
 				test: /\.p?css$/,
-				exclude: /react-images-uploader/,
+				exclude: /slick-carousel/,
 				use: isDevServer
 					? [
 						'style-loader?sourceMap',
@@ -142,11 +142,16 @@ const config = {
 						].join('!'),
 					}),
 			}, {
-				test: /react-images-uploader\/styles\.css$/,
-				use: [
-					'style-loader',
-					'css-loader',
-				],
+				test: /slick-carousel/,
+				use: isDevServer
+					? [
+						'style-loader',
+						'css-loader',
+					]
+					: ExtractTextPlugin.extract({
+						fallback: 'style-loader',
+						use: 'css-loader',
+					}),
 			}, {
 				test: /\.png$/,
 				loader: getLoader('file-loader?name=', 'images/[hash].[ext]'),

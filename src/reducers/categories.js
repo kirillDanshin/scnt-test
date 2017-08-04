@@ -34,7 +34,3 @@ export const initialState = fromJS({
 		selected: 0,
 	},
 })
-
-export const put = (state, payload) => (
-	state.set('name', payload.name)
-)
