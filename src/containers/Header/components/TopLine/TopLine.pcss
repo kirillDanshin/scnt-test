@@ -3,13 +3,13 @@
 	width: 100%;
 	height: 38px;
 	
-	@media (width <= $mobileMax) {
+	@media (width <= $tabletMax) {
 		background: transparent;
 	}
 
-
 	& .wrapper {
 		@mixin maxWidth;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -18,7 +18,7 @@
 		margin: auto;
 		font-size: 14px;
 
-		@media (width <= $mobileMax) {
+		@media (width <= $tabletMax) {
 			display: none;
 		}
 	}
@@ -59,17 +59,27 @@
 }
 
 .cart-container {
-	margin-left: 15px;
-	padding-left: 5px;
-	padding-right: 20px;
+	padding-right: 4px;
+	display: flex;
+	align-items: center;
+
+	@media (width > $tabletMax) {
+		margin-left: 15px;
+		padding-left: 5px;
+	}
 }
 
 .mobile {
 	display: none;
 
-	@media (width <= $mobileMax) {
-		display: block;
+	@media (width <= $tabletMax) {
+		display: flex;
+		justify-content: space-between;
 		margin: 10px;
+	}
+
+	.cart {
+		margin-right: 5px;
 	}
 }
 
@@ -77,17 +87,19 @@
 	position: relative;
 	width: 27px;
 	height: 21px;
+	margin: 4px;
+	cursor: pointer;
 }
 
 .toggle {
-	top: 0;
+	top: 0; /* top line */
 
 	&::before {
-		top: 6px;
+		top: 6px; /* middle line */
 	}
 
 	&::after {
-		top: 12px;
+		top: 12px; /* bottom line */
 	}
 
 	&,
@@ -102,6 +114,42 @@
 	}
 }
 
-.content {
-	display: none;
+.dropdown {
+	position: absolute;
+	overflow: hidden;
+	z-index: 10;
+	max-height: 0px;
+	opacity: 0;
+	top: 40px;
+	@mixin transitionAll;
+	
+	&.opened {
+		opacity: 1;
+		max-height: 250px;
+		border-top: 2px solid $brandColor;
+		background: #fff;
+		box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+	}
+
+	a {
+		padding: 10px;
+		display: block;
+	}
+}
+
+.dropdownCloseArea {
+	z-index: 8;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.logo {
+	height: 40px;
+
+	@media (width <= $mobileMax) {
+		height: 25px;
+	}
 }

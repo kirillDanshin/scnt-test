@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import cssModules from 'react-css-modules'
 import Logo from '@components/Logo/Logo'
+import Search from '../Search/Search'
 import bird from './images/bird.gif'
 import styles from './Heading.pcss'
 
 @cssModules(styles)
 export default class Heading extends Component {
 	render() {
-		return (
-			<div styleName="heading">
-				<div styleName="wrapper">
-					<div styleName="search-container">
-						<input styleName="search" placeholder="Search" />
-					</div>
+		const { className } = this.props
 
+		return (
+			<div className={className} styleName="heading">
+				<div styleName="wrapper">
+					<Search />
 					<div>
 						<Logo styleName="logo" />
 					</div>

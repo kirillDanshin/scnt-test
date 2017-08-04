@@ -32,4 +32,8 @@ module.exports = {
 	transitionAll: {
 		transition: 'all 150ms ease-in-out 0s',
 	},
+
+	easeOutAll: {
+		transition: 'all 150ms ease-out 0s',
+	},
 }

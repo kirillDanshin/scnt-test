@@ -15,35 +15,8 @@
 	}
 }
 
-.search-container {
-	position: relative;
-
-	&::before {
-		position: absolute;
-		background: url('./images/search.svg');
-		background-repeat: no-repeat;
-		content: '';
-		top: 6px;
-		left: 9px;
-		width: 15px;
-		height: 16px;
-	}
-}
-
-.search {
-	padding: 7px 7px 7px 30px;
-	border: 1px solid #e6e6e6;
-	color: #000;
-
-	@mixin placeholderColor #000;
-}
-
 .logo {
 	height: 40px;
-
-	@media (width < $tabletMax) {
-		display: none;
-	}
 }
 
 .bird {

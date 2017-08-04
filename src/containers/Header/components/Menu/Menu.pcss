@@ -6,9 +6,14 @@
 .menu-wrapper {
 	white-space: nowrap;
 	padding: 15px;
+	margin: auto;
 
 	@media (width > $mobileMax) {
 		@mixin maxWidth;
+	}
+
+	&:hover .active:not(:hover) {
+		color: #000;
 	}
 }
 
@@ -23,7 +28,8 @@
 		padding: 0 15px;
 	}
 
-	&:hover {
+	&:hover,
+	&.active {
 		color: $brandColor;
 	}
 }

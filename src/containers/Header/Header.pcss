@@ -1,0 +1,35 @@
+.mobileOnly {
+    @media (width > $tabletMax) {
+        display: none;
+    }
+}
+
+.heading {
+    @media (width <= $tabletMax) {
+        display: none;
+    }
+}
+
+.search {
+    &:before {
+        top: 15px;
+        left: 18px;
+    }
+
+    &,
+    & input {
+        height: 46px;
+    }
+
+    input {
+        border: 1px solid #c0c0c0;
+        background-color: #f8f8f8;
+        padding-left: 40px;
+        font-size: 14px;
+        font-weight: 400;
+
+        &:focus {
+            border-color: $brandColor;
+        }
+    }
+}

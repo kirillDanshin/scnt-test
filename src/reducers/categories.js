@@ -31,6 +31,7 @@ export const initialState = fromJS({
 				name: 'Brands',
 			},
 		],
+		selected: 0,
 	},
 })
 
