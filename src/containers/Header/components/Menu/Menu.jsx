@@ -15,8 +15,8 @@ export default class Menu extends Component {
 
 
 		return (
-			<div styleName="menu-container">
-				<div styleName="menu-wrapper">
+			<div styleName="container">
+				<div styleName="wrapper">
 					{categories && categories.map((cat, idx) => {
 						const itemStyle = cx('item', {
 							active: idx === selected,

@@ -8,7 +8,7 @@ export default class Search extends Component {
 		const { className, dark } = this.props
 
 		return (
-			<div className={className} styleName={`search-container ${dark ? 'dark' : ''}`}>
+			<div className={className} styleName={`container ${dark ? 'dark' : ''}`}>
 				<input styleName="search" placeholder="Search" />
 			</div>
 		)

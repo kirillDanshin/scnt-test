@@ -54,7 +54,7 @@ export default class TopLine extends Component {
 		})
 
 		return (
-			<div styleName="top-line">
+			<div styleName="topLine">
 				<div styleName="wrapper">
 					<div styleName="left">
 						<a>Wall of love</a>
@@ -62,11 +62,11 @@ export default class TopLine extends Component {
 					</div>
 
 					<div styleName="right">
-						<div styleName="profile-container">
+						<div styleName="profileContainer">
 							<img alt="profile" src={profileIcon} />
 							{name}
 						</div>
-						<div styleName="cart-container">
+						<div styleName="cartContainer">
 							<img alt="cart" src={cartIcon} />
 							<a>Cart (<span styleName="count">{count}</span>)</a>
 						</div>
@@ -74,11 +74,11 @@ export default class TopLine extends Component {
 				</div>
 
 				<div styleName="mobile">
-					<div styleName="toggle-area" onClick={this.toggleDropdown}>
+					<div styleName="toggleArea" onClick={this.toggleDropdown}>
 						<div styleName="toggle" />
 					</div>
 					<Logo styleName="logo" />
-					<div styleName="cart-container">
+					<div styleName="cartContainer">
 						<img styleName="cart" alt="cart" src={blackCartIcon} />
 						<a>(<span styleName="count">{count}</span>)</a>
 					</div>
