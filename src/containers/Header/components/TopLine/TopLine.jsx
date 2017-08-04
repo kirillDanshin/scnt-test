@@ -56,10 +56,10 @@ export default class TopLine extends Component {
 		return (
 			<div styleName="topLine">
 				<div styleName="wrapper">
-					<div styleName="left">
+					<nav styleName="left">
 						<a>Wall of love</a>
 						<a>Send a gift</a>
-					</div>
+					</nav>
 
 					<div styleName="right">
 						<div styleName="profileContainer">
@@ -82,12 +82,12 @@ export default class TopLine extends Component {
 						<img styleName="cart" alt="cart" src={blackCartIcon} />
 						<a>(<span styleName="count">{count}</span>)</a>
 					</div>
-					<div styleName={dropdownSx}>
+					<nav styleName={dropdownSx}>
 						<a>Wall of love</a>
 						<a>Send a gift</a>
 						<a>Get free parfum</a>
 						<a>Account</a>
-					</div>
+					</nav>
 					{
 						dropdownOpened && (
 							<div styleName="dropdownCloseArea" onClick={this.forceCloseDropdown} />

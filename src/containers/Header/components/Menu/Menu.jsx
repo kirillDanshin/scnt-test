@@ -16,7 +16,7 @@ export default class Menu extends Component {
 
 		return (
 			<div styleName="container">
-				<div styleName="wrapper">
+				<nav styleName="wrapper">
 					{categories && categories.map((cat, idx) => {
 						const itemStyle = cx('item', {
 							active: idx === selected,
@@ -26,7 +26,7 @@ export default class Menu extends Component {
 							<a styleName={itemStyle} key={idx}>{cat.get('name')}</a>
 						)
 					})}
-				</div>
+				</nav>
 			</div>
 		)
 	}

@@ -1,0 +1,43 @@
+.container {
+	white-space: nowrap;
+	padding: 18px;
+	margin: 0 auto 55px;
+	display: flex;
+	font-size: 13px;
+	@mixin maxWidth;
+	padding-left: 30px;
+
+	@media (width <= $tabletMax) {
+		display: none;
+	}
+
+	&:hover .active:not(:hover) {
+		color: #000;
+	}
+}
+
+.crumb {
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	color: #000;
+	@mixin transitionAll;
+
+	&.inactive {
+		cursor: default;
+		color: #9b9b9b;
+	}
+
+	&:not(.inactive):hover {
+		color: $brandColor;
+	}
+}
+
+.arrow {
+	font-family: FontAwesome;
+	margin: 1px 8px 0;
+	font-size: 8px;
+	color: #000;
+	height: 8px;
+}
