@@ -20,10 +20,19 @@
 .notes {
 	max-width: 690px;
 	margin: auto;
-	display: inline-block;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
-	@media (width <= $mobileMax) {
-		img {
+	.note {
+		@media (width <= $tabletMax) {
+			flex-grow: 1;
+			width: 33%;
+			margin-bottom: 6px;
+		}
+
+		@media (width <= $mobileMax) {
+			margin-bottom: 4px;
 		}
 	}
 }
