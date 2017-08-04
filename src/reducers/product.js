@@ -25,5 +25,6 @@ export const initialState = Map({
 			name: 'Hilarious Scentbird Presentation',
 		},
 	],
+	notes: [1, 2, 3, 4, 5, 6].map(v => getLink(`notes/notes-${v}.png`)),
 	selectedMediaCount: 0,
 })

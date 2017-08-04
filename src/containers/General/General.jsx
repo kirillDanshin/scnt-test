@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import cssModules from 'react-css-modules'
 import Header from '@containers/Header/Header'
 import Product from '@containers/Product/Product'
+import Notes from '@containers/Notes/Notes'
 import Breadcrumbs from '@components/Breadcrumbs/Breadcrumbs'
 import styles from './General.pcss'
 
@@ -28,6 +29,8 @@ export default class General extends Component {
 				<Breadcrumbs crumbs={crumbs} />
 
 				<Product />
+
+				<Notes />
 			</div>
 		)
 	}

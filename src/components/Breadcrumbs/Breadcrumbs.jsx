@@ -26,8 +26,8 @@ export default class Breadcrumbs extends Component {
 						})
 
 						return (
-							<div styleName={itemStyle}>
-								<a key={idx}>{crumb.name}</a>
+							<div key={idx} styleName={itemStyle}>
+								<a>{crumb.name}</a>
 
 								{idx < crumbs.length - 1 && <div styleName="arrow"></div>}
 							</div>
