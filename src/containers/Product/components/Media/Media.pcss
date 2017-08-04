@@ -16,6 +16,7 @@
 .carousel {
 	width: 260px;
 	margin: auto;
+	position: relative;
 }
 
 .preview {
@@ -24,7 +25,9 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	border: 1px solid #cbcbcb;
 	position: relative;
+	cursor: pointer;
 
 	&.video::after {
 		content: "\f04b";
@@ -41,5 +44,32 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+}
+
+.carouselArrow {
+	color: #9b9b9b;
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-size: 20px;
+	display: block;
+	top: 50%;
+	position: absolute;
+	cursor: pointer;
+
+	@mixin transitionAll;
+
+	&:hover {
+		color: #000;
+	}
+
+	&.prev {
+		left: -50px;
+		transform: translateY(-50%);
+	}
+
+	&.next {
+		right: -50px;
+		transform: translateY(-50%) rotate(180deg);
 	}
 }

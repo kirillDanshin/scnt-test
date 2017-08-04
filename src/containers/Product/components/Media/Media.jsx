@@ -67,6 +67,9 @@ export default class Media extends Component {
 		const { media, selectedMediaCount } = this.props
 		const selectedMedia = media[selectedMediaCount]
 
+		const prevArrow = <div><i className={`${styles.carouselArrow} ${styles.prev}`}></i></div>
+		const nextArrow = <div><i className={`${styles.carouselArrow} ${styles.next}`}></i></div>
+
 		const carouselSettings = {
 			dots: false,
 			infinite: true,
@@ -74,6 +77,8 @@ export default class Media extends Component {
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			styleName: 'carousel',
+			prevArrow,
+			nextArrow,
 		}
 
 		return (
@@ -84,7 +89,9 @@ export default class Media extends Component {
 				<div styleName="carousel-wrapper">
 					<Carousel {...carouselSettings}>
 						{media.map((item, key) => (
-							<div key={key}>{this.showPreview(item)}</div>
+							<div key={key}>
+								{this.showPreview(item)}
+							</div>
 						))}
 					</Carousel>
 				</div>
