@@ -47,29 +47,12 @@
 	}
 }
 
-.carouselArrow {
-	color: #9b9b9b;
-	font-family: "FontAwesome";
-	font-style: normal;
-	font-size: 20px;
-	display: block;
-	top: 50%;
-	position: absolute;
-	cursor: pointer;
+.carouselArrowPrev {
+	left: -50px;
+	transform: translateY(-50%);
+}
 
-	@mixin transitionAll;
-
-	&:hover {
-		color: #000;
-	}
-
-	&.prev {
-		left: -50px;
-		transform: translateY(-50%);
-	}
-
-	&.next {
-		right: -50px;
-		transform: translateY(-50%) rotate(180deg);
-	}
+.carouselArrowNext {
+	right: -50px;
+	transform: translateY(-50%) rotate(180deg);
 }

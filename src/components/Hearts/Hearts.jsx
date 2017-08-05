@@ -1,19 +1,23 @@
 import React from 'react'
 import CSSModules from 'react-css-modules'
-import cx from 'classnames'
+import Heart from '@components/Heart/Heart'
 import styles from './Hearts.pcss'
 
 const Hearts = ({ count = 0 }) => (
 	<div>
 		{
 			[1, 2, 3, 4, 5].map(item => {
-				const className = cx('heart', {
-					first: item === 1,
-					last: item === 5,
-					active: item <= count,
-				})
+				const isActive = item <= count
+				
+				let styleName = ''
+				if (item === 1) {
+					styleName = 'first'
+				}
+				if (item === 5) {
+					styleName = 'last'
+				}
 
-				return <i key={item} styleName={className}></i>
+				return <Heart key={item} active={isActive} styleName={styleName} />
 			})
 		}
 	</div>

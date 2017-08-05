@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import cssModules from 'react-css-modules'
 import { connect } from 'redaction/immutable'
+import calculateAvgRating from '@utils/calculateAvgRating'
 import Hearts from '@components/Hearts/Hearts'
+import RatingInfo from '@components/RatingInfo/RatingInfo'
 import Media from './components/Media/Media'
 import styles from './Product.pcss'
 
@@ -10,17 +12,20 @@ import styles from './Product.pcss'
 	title: 'product.title',
 	subtitle: 'product.subtitle',
 	media: 'product.media',
-	selectedMediaCount: 'product.selectedMediaCount',
+	selectedMediaIdx: 'product.selectedMediaIdx',
+	rating: 'product.rating',
 })
 @cssModules(styles)
 export default class Product extends Component {
 	render() {
-		const { heading, title, subtitle, media, selectedMediaCount } = this.props
+		const { heading, title, subtitle, media, selectedMediaIdx, rating } = this.props
+
+		const avgRating = calculateAvgRating(rating)
 
 		return (
 			<div styleName="product">
 				<div>
-					<Media media={media} selectedMediaCount={selectedMediaCount} />
+					<Media media={media} selectedMediaIdx={selectedMediaIdx} />
 				</div>
 				<div>
 					<div styleName="heading-wrapper">
@@ -29,9 +34,16 @@ export default class Product extends Component {
 							<h2 styleName="title">{title}</h2>
 							<h3 styleName="subtitle">{subtitle}</h3>
 						</div>
-						<div>
-							<Hearts count={3} />
+						<div styleName="ratingWrapper">
+							<Hearts count={avgRating} />
 							<div styleName="reviews-count">10 reviews</div>
+							<div styleName="hoverWrapper">
+								<div styleName="triangle" />
+								<div styleName="borderWhite" />
+								<div styleName="ratingInfoWrapper">
+									<RatingInfo rating={rating} />
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

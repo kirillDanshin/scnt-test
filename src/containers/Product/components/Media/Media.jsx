@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import cssModules from 'react-css-modules'
 import Carousel from 'react-slick'
 import 'slick-carousel/slick/slick.css'
+import actions from '@actions'
+import CarouselArrow from '../CarouselArrow/CarouselArrow'
 import styles from './Media.pcss'
 
 @cssModules(styles, { allowMultiple: true })
@@ -16,7 +18,7 @@ export default class Media extends Component {
 				name: PropTypes.string,
 			})
 		).isRequired,
-		selectedMediaCount: PropTypes.number,
+		selectedMediaIdx: PropTypes.number,
 	}
 
 	showMedia = media => {
@@ -63,12 +65,11 @@ export default class Media extends Component {
 		return null
 	}
 
-	render() {
-		const { media, selectedMediaCount } = this.props
-		const selectedMedia = media[selectedMediaCount]
+	selectMedia = idx => () => actions.product.selectMediaIdx(idx)
 
-		const prevArrow = <div><i className={`${styles.carouselArrow} ${styles.prev}`}></i></div>
-		const nextArrow = <div><i className={`${styles.carouselArrow} ${styles.next}`}></i></div>
+	render() {
+		const { media, selectedMediaIdx } = this.props
+		const selectedMedia = media[selectedMediaIdx]
 
 		const carouselSettings = {
 			dots: false,
@@ -77,8 +78,8 @@ export default class Media extends Component {
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			styleName: 'carousel',
-			prevArrow,
-			nextArrow,
+			prevArrow: <CarouselArrow type="prev" />,
+			nextArrow: <CarouselArrow type="next" />,
 		}
 
 		return (
@@ -89,7 +90,7 @@ export default class Media extends Component {
 				<div styleName="carousel-wrapper">
 					<Carousel {...carouselSettings}>
 						{media.map((item, key) => (
-							<div key={key}>
+							<div key={key} onClick={this.selectMedia(key)}>
 								{this.showPreview(item)}
 							</div>
 						))}
