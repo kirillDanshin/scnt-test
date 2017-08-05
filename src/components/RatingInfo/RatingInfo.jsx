@@ -1,31 +1,30 @@
 import React from 'react'
 import CSSModules from 'react-css-modules'
 import Heart from '@components/Heart/Heart'
+import RatingLine from '@components/RatingLine/RatingLine'
 import styles from './RatingInfo.pcss'
 
 const calculateWidths = rating => {
-	const max = rating.reduce((p, v) => (p > v ? p : v))
+	const max = Math.max(...rating)
 
 	return rating.map(v => v / max * 100)
 }
 
 const RatingInfo = ({ rating }) => {
-	const widths = calculateWidths(rating)
+	const reversedRating = rating.reverse()
+	const widths = calculateWidths(reversedRating)
 
 	return (
 		<div>
 			{
-				rating.map((value, key) => (
-					<div key={key}>
-						<span>{key + 1}</span>
-						<Heart active={value > 0} />
-						<div
-							styleName="line"
-							style={{
-								width: widths[key],
-							}}
-							/>
-						<span>{value}</span>
+				reversedRating.map((value, key) => (
+					<div key={key} styleName="item">
+						<span styleName="num">{5 - key}</span>
+						<Heart active={value > 0} styleName="heart" />
+						<div styleName="lineWrapper">
+							<RatingLine width={widths[key]} />
+						</div>
+						<span styleName="value">{value}</span>
 					</div>
 				))
 			}

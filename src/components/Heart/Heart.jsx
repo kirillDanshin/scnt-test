@@ -1,14 +1,15 @@
-import React from 'react'
-import CSSModules from 'react-css-modules'
-import cx from 'classnames'
-import styles from './Heart.pcss'
+import styled from 'styled-components'
+import { brandColor } from '@stylevars'
 
-const Heart = ({ active, className }) => {
-	const styleName = cx('heart', {
-		active,
-	})
+export default styled.i`
+	color: ${({ active }) => (active ? brandColor : '#dadada')};
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-size: 14px;
+	margin: 0 3px;
+	cursor: default;
 
-	return <i styleName={styleName} className={className}></i>
-}
-
-export default CSSModules(Heart, styles, { allowMultiple: true })
+	&:before {
+		content: "\f004";
+	}
+`
