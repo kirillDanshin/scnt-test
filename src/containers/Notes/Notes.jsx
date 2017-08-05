@@ -21,7 +21,7 @@ export default class Notes extends Component {
 				<div styleName="notes">
 					{
 						notes.map((link, idx) => (
-							<div styleName="note">
+							<div styleName="note" key={idx}>
 								<img key={idx} alt="main notes" src={link} />
 							</div>
 						))

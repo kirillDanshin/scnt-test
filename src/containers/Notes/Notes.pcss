@@ -25,6 +25,13 @@
 	justify-content: space-between;
 
 	.note {
+		transform: scale(1);
+		@mixin transitionAll;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+
 		@media (width <= $tabletMax) {
 			flex-grow: 1;
 			width: 33%;
@@ -34,5 +41,6 @@
 		@media (width <= $mobileMax) {
 			margin-bottom: 4px;
 		}
+
 	}
 }

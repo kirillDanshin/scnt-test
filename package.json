@@ -26,6 +26,7 @@
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.10",
+    "rc-slider": "^8.3.1",
     "react": "^15.4.2",
     "react-css-modules": "^3.7.10",
     "react-dom": "^15.4.2",
@@ -34,7 +35,8 @@
     "react-slick": "^0.14.11",
     "redaction": "^4.0.3",
     "redux": "^3.6.0",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "styled-components": "^2.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",

@@ -61,6 +61,12 @@ export const initialState = Map({
 			iconLink: getRateIconLink('office'),
 			votes: 17,
 		},
+		{
+			name: 'Personality',
+			choise: 'Date Night',
+			iconLink: getRateIconLink('date-night'),
+			votes: 36,
+		},
 	],
 	rating: [3, 12, 23, 64, 87],
 	selectedMediaIdx: 0,
