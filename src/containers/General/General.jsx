@@ -4,6 +4,7 @@ import Header from '@containers/Header/Header'
 import Product from '@containers/Product/Product'
 import Notes from '@containers/Notes/Notes'
 import Rates from '@containers/Rates/Rates'
+import Vote from '@containers/Vote/Vote'
 import Breadcrumbs from '@components/Breadcrumbs/Breadcrumbs'
 import Hr from '@components/Hr/Hr'
 import styles from './General.pcss'
@@ -36,6 +37,11 @@ export default class General extends Component {
 				<Rates />
 
 				<Hr />
+
+				<Vote />
+
+				<Hr />
+
 			</div>
 		)
 	}

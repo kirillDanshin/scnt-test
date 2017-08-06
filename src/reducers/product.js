@@ -1,4 +1,4 @@
-import { Map } from 'immutable'
+import { Map, fromJS } from 'immutable'
 
 const cdnAddr = 'https://scnt-test-cdn.danshin.pro/'
 
@@ -70,8 +70,22 @@ export const initialState = Map({
 	],
 	rating: [3, 12, 23, 64, 87],
 	selectedMediaIdx: 0,
+	votes: fromJS({
+		longevity: {
+			avg: { text: 'Strong', votes: 25 },
+			opinion: {},
+		},
+		sillage: {
+			avg: { text: 'Heavy', votes: 45 },
+			opinion: {},
+		},
+	}),
 })
 
 export const set = (state, payload) => (
 	state.set(payload.key, payload.value)
+)
+
+export const setIn = (state, payload) => (
+	state.setIn(payload.key, payload.value)
 )

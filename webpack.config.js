@@ -125,7 +125,7 @@ const config = {
 					: ['babel-loader'],
 			}, {
 				test: /\.p?css$/,
-				exclude: /slick-carousel/,
+				exclude: /(slick-carousel|rc-slider)/,
 				use: isDevServer
 					? [
 						'style-loader?sourceMap',
@@ -142,7 +142,7 @@ const config = {
 						].join('!'),
 					}),
 			}, {
-				test: /slick-carousel/,
+				test: /(slick-carousel|rc-slider)[^.]+\.css/,
 				use: isDevServer
 					? [
 						'style-loader',
