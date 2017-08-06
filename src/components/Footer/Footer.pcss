@@ -1,0 +1,176 @@
+.footer {
+	background-color: #000000;
+	width: 100%;
+}
+
+.footerWrapper {
+	@mixin maxWidth;
+
+	margin: auto;
+	padding: 50px 20px;
+	color: #fff;
+}
+
+.top {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #292929;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logoAndMenu {
+	display: flex;
+	justify-content: space-between;
+	flex-grow: 2;
+}
+
+.followAndSubscribe {
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.logoWrapper {
+	padding-bottom: 20px;
+}
+
+.description {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	padding-bottom: 15px;
+}
+
+.mailto {
+	color: $brandColor;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.title {
+	color: #777;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.line {
+	width: 40px;
+	height: 2px;
+	background-color: #292929;
+	margin: 10px 0;
+}
+
+.link {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 28px;
+	display: block;
+	cursor: pointer;
+	@mixin transitionAll;
+
+	&:hover,
+	&.active {
+		color: $brandColor;
+	}
+}
+
+.socialIcons {
+	padding-bottom: 40px;
+}
+
+.socialLink {
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.subscribeWrapper {
+	position: relative;
+	margin-top: 10px;
+}
+
+.subscribeInput {
+	font-style: italic;
+	background: transparent;
+	width: 260px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	border-bottom: 1px solid #292929;
+	color: #fff;
+	padding: 5px 0;
+	padding-right: 20px;
+
+	@mixin placeholderColor #fff;
+}
+
+.arrowWrapper {
+	position: absolute;
+	height: 100%;
+	right: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+}
+
+.arrow {
+	color: $brandColor;
+	font-family: "FontAwesome";
+	font-size: 14px;
+	font-style: normal;
+	transform: rotate(180deg);
+	cursor: default;
+}
+
+.signUp {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	padding-top: 15px;
+}
+
+.signUpLink {
+	@mixin transitionAll;
+
+	color: $brandColor;
+	cursor: pointer;
+
+	&:hover,
+	&.active {
+		color: lighten($brandColor, 8%);
+	}
+}
+
+.bottom {
+	padding-top: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.copyWrapper {
+	color: #777;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.copy {
+	font-family: "FontAwesome";
+	font-size: 14px;
+	font-style: normal;
+	margin: 0 7px;
+}
+
+.bottomText {
+	display: flex;
+	align-items: center;
+}
+
+.dot {
+	width: 4px;
+	height: 4px;
+	background-color: #777;
+	border-radius: 50%;
+	margin: 0 10px;
+}

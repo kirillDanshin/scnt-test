@@ -86,6 +86,7 @@ export default class Media extends Component {
 			<div>
 				<div styleName="selected-media">
 					{ selectedMedia && this.showMedia(selectedMedia) }
+					<i styleName="genderIcon"></i>
 				</div>
 				<div styleName="carousel-wrapper">
 					<Carousel {...carouselSettings}>

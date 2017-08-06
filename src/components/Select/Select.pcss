@@ -1,0 +1,58 @@
+.container {
+	width: 165px;
+}
+
+.selectedWrapper {
+	width: 100%;
+	border: 1px solid #e6e6e6;
+	background-color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 12px 30px 12px 12px;
+	position: relative;
+	cursor: pointer;
+}
+
+.arrowContainer {
+	position: absolute;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	right: 18px;
+	top: 0;
+}
+
+.arrowIcon {
+	transition: all 250ms ease-in-out 0s;
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-size: 8px;
+	transform: rotate(90deg);
+
+	&.showOptions {
+		transform: rotate(-90deg);
+	}
+}
+
+.options {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 250ms ease-in-out 0s;
+
+	&.show {
+		max-height: 1000px;
+	}
+}
+
+.option {
+	width: 100%;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	background-color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 12px;
+	position: relative;
+	cursor: pointer;
+}

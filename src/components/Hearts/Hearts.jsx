@@ -3,8 +3,8 @@ import CSSModules from 'react-css-modules'
 import Heart from '@components/Heart/Heart'
 import styles from './Hearts.pcss'
 
-const Hearts = ({ count = 0 }) => (
-	<div>
+const Hearts = ({ count = 0, className }) => (
+	<div className={className}>
 		{
 			[1, 2, 3, 4, 5].map(item => {
 				const isActive = item <= count

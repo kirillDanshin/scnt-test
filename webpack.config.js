@@ -180,14 +180,15 @@ if (!isDevServer) {
 }
 
 if (isDevServer) {
-	config.plugins.unshift(new webpack.NamedModulesPlugin());
-	config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
+	config.plugins.unshift(new webpack.NamedModulesPlugin())
+	config.plugins.unshift(new webpack.HotModuleReplacementPlugin())
 
 	config.devServer = {
 		contentBase: path.resolve('./dist'),
 		hot: true,
 		host: '0.0.0.0',
 		port: PORT,
+		headers: { 'Access-Control-Allow-Origin': '*' },
 		// Need historyApiFallback to be able to refresh on dynamic route
 		historyApiFallback: { disableDotRule: true },
 		compress: true,

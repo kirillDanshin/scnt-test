@@ -5,7 +5,9 @@ import Product from '@containers/Product/Product'
 import Notes from '@containers/Notes/Notes'
 import Rates from '@containers/Rates/Rates'
 import Vote from '@containers/Vote/Vote'
+import Reviews from '@containers/Reviews/Reviews'
 import Breadcrumbs from '@components/Breadcrumbs/Breadcrumbs'
+import Footer from '@components/Footer/Footer'
 import Hr from '@components/Hr/Hr'
 import styles from './General.pcss'
 
@@ -42,6 +44,9 @@ export default class General extends Component {
 
 				<Hr />
 
+				<Reviews />
+
+				<Footer />
 			</div>
 		)
 	}

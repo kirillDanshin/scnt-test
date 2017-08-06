@@ -1,0 +1,29 @@
+.options {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+
+.option {
+	border: 1px solid #e6e6e6;
+	padding: 7px 17px;
+	width: calc(50% - 5px);
+	margin-bottom: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+
+	&.selected {
+		border: 1px solid #ff408e;
+	}
+}
+
+.preview {
+	height: 36px;
+	padding-right: 10px;
+}
+
+.name {
+	font-size: 14px;
+}
