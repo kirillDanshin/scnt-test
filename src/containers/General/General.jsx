@@ -6,6 +6,8 @@ import Notes from '@containers/Notes/Notes'
 import Rates from '@containers/Rates/Rates'
 import Vote from '@containers/Vote/Vote'
 import Reviews from '@containers/Reviews/Reviews'
+import Recommendations from '@containers/Recommendations/Recommendations'
+import Description from '@containers/Description/Description'
 import Breadcrumbs from '@components/Breadcrumbs/Breadcrumbs'
 import Footer from '@components/Footer/Footer'
 import Hr from '@components/Hr/Hr'
@@ -41,6 +43,14 @@ export default class General extends Component {
 				<Hr />
 
 				<Vote />
+
+				<Hr />
+
+				<Recommendations />
+
+				<Hr />
+
+				<Description />
 
 				<Hr />
 

@@ -1,14 +1,15 @@
-.selected-media {
+.selectedMedia {
 	margin: auto;
-	height: 425px;
-	width: 425px;
+	max-height: 425px;
+	max-width: 425px;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
 }
 
-.carousel-wrapper {
+.carouselWrapper {
 	padding: 17px 0;
 	margin: auto;
 }
@@ -65,4 +66,9 @@
 	position: absolute;
 	top: 0;
 	right: -32px;
+
+	@media (width <= $tabletMax) {
+		top: 10px;
+		right: 0;
+	}
 }

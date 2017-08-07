@@ -84,11 +84,11 @@ export default class Media extends Component {
 
 		return (
 			<div>
-				<div styleName="selected-media">
+				<div styleName="selectedMedia">
 					{ selectedMedia && this.showMedia(selectedMedia) }
 					<i styleName="genderIcon"></i>
 				</div>
-				<div styleName="carousel-wrapper">
+				<div styleName="carouselWrapper">
 					<Carousel {...carouselSettings}>
 						{media.map((item, key) => (
 							<div key={key} onClick={this.selectMedia(key)}>

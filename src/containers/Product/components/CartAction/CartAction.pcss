@@ -3,12 +3,21 @@
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 20px;
+
+	@media (width <= $tabletMax) {
+		flex-direction: column;
+	}
 }
 
 .product {
 	display: flex;
 	align-items: center;
 	padding-right: 70px;
+
+	@media (width <= $tabletMax) {
+		padding-right: 0;
+		margin-bottom: 20px;
+	}
 }
 
 .preview {

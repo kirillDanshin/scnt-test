@@ -48,12 +48,12 @@ export default class Product extends Component {
 		const selectedInfoContent = info[selectedInfoIdx].content
 
 		return (
-			<div styleName="product">
+			<div styleName="container">
 				<div styleName="mediaWrapper">
 					<Media media={media} selectedMediaIdx={selectedMediaIdx} />
 				</div>
 				<div>
-					<div styleName="heading-wrapper">
+					<div styleName="headingWrapper">
 						<div>
 							<h1 styleName="heading">{heading}</h1>
 							<h2 styleName="title">{title}</h2>
@@ -61,7 +61,7 @@ export default class Product extends Component {
 						</div>
 						<div styleName="ratingWrapper">
 							<Hearts count={avgRating} />
-							<div styleName="reviews-count">10 reviews</div>
+							<div styleName="reviewsCount">10 reviews</div>
 							<div styleName="hoverWrapper">
 								<div styleName="triangle" />
 								<div styleName="borderWhite" />

@@ -1,8 +1,11 @@
+/* eslint-disable no-irregular-whitespace */
+
 import { Map, fromJS } from 'immutable'
 import { getLink } from '@utils/cdn'
 
 const getRateIconLink = name => getLink(`rates/${name}.svg`)
 const getOptionLink = idx => getLink(`options/option-${idx}.png`)
+const getRecomLink = idx => getLink(`recom/recom-${idx}.png`)
 
 // NOTE: placeholder data here.
 // should not be used as main storage.
@@ -132,6 +135,75 @@ export const initialState = Map({
 		},
 	],
 	selectedOptionIdx: 0,
+	recommendations: [
+		{
+			link: getRecomLink(1),
+			brand: 'Marc Jacobs',
+			title: 'Daisy',
+		},
+		{
+			link: getRecomLink(2),
+			brand: 'Juicy Couture',
+			title: 'Viva La Juicy',
+		},
+		{
+			link: getRecomLink(3),
+			brand: 'VIKTOR&ROLF',
+			title: 'Flowerbomb',
+		},
+		{
+			link: getRecomLink(4),
+			brand: 'Tom Ford',
+			title: 'Black Orchid',
+		},
+		{
+			link: getRecomLink(4),
+			brand: 'Tom Ford',
+			title: 'Black Orchid',
+		},
+	],
+	fullDescription: `The Skateboard Deck Display – Floating Mount is the net result of
+years of experimentation in how to best display the art of skateboarding's soul
+while minimally impacting your wall. The combination of surgical quality acrylic and
+aircraft grade steel insures a lifetime of service. The very precise fit of this system
+makes the decks appear to be floating off the wall creating a museum quality aesthetic.
+These mounts are so good they are used by many skateboarding pros and companies in the
+skateboard industry to display their decks.
+
+What about longboards!? Don’t worry, we have our power-sliding and dancin’ friends
+covered too. Check out the Longboard Art Mount for a rack that lets you show off your
+longboard.
+
+Want to show off your skateboard’s deck, but don’t like the idea of removing the trucks?
+Check out our Complete Skateboard Wall Rack for a rack that lets you keep your board ready to ride! 
+
+Are you an artist? Do you just want to get creative? We offer a bundled skateboard art
+package of 5 of these mounts plus 5 blank decks so your can have an entire skateboard
+canvas to get creative with. 
+
+Chances are that if you've been a skateboarder for many years of your life, you
+greatly value the memories of learning your first tricks, meeting your first pro,
+competing at a contest, skating a secret spot, your first backyard pool, ditch or even
+getting sponsored by your local shop. Yes, those are the significant moments that
+collectively make up our individual lives as skaters and are some of the important
+ones we hold on to. And along the way, we tend to hold onto material pieces that
+relate and reconnect to those vivid memories. Without a doubt, the most visual pieces
+from our own histories are our skateboards and what better way to reflect on the good
+times than display those decks on your wall. This is the skateboard mount you need to
+make it come true. Now’s the time to pull out those decks from the closet or attic and
+showcase those skateboards that hold special memories for you or even to show off limited
+edition boards that bear some sick graphics.
+
+Mounting Complete Skateboards
+
+Believe it or not, this rack is also perfectly capable of displaying complete skateboards.
+This is a great option if you have an entire complete that's retired and not just the deck.
+Mounting a complete isn't too different from mounting just a deck, but since a complete deck
+is a lot heavier it does require the use of two displays. In order to mount a complete, you
+will need to remove your board's inner truck hardware. Then, you press the display's bolts
+through your board's deck/riser/trucks. It is recommended that you swap the provided t-nut
+with 8/32" lock nuts. The lock nuts aren't mandatory but are definitely recommended for an
+extra layer of safety.`,
 })
 
 export const set = (state, payload) => (

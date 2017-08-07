@@ -15,8 +15,8 @@ export default class Footer extends Component {
 		const shopLinks = ['Shop', 'Send a Gift', 'Shop perfumes', 'Shop colognes']
 
 		return (
-			<footer styleName="footer">
-				<div styleName="footerWrapper">
+			<footer styleName="container">
+				<div styleName="wrapper">
 					<div styleName="top">
 						<div styleName="logoAndMenu">
 							<div>

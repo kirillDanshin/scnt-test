@@ -17,10 +17,18 @@
 	&.prev {
 		left: -60px;
 		transform: translateY(-50%);
+
+		@media (width <= 1020px) {
+			left: -30px;
+		}
 	}
 
 	&.next {
 		right: -60px;
 		transform: translateY(-50%) rotate(180deg);
+
+		@media (width <= 1020px) {
+			right: -30px;
+		}
 	}
 }

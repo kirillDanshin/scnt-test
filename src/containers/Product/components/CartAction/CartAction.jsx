@@ -25,7 +25,7 @@ export default class CartAction extends Component {
 					<img styleName="preview" src={preview} alt={name} />
 					<div>
 						<span styleName="priceText">
-							{isSubscription && 'Subscription '}price:
+							{isSubscription ? 'Subscription ' : 'A la carte '}price:
 						</span>
 						<strong styleName="price"> ${price}</strong>
 						{isSubscription && <div styleName="description">30-day supply of this scent</div>}
