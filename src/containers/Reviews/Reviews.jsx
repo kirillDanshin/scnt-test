@@ -52,8 +52,7 @@ export default class Reviews extends Component {
 						</div>
 						<div styleName="buttonWrapper">
 							<Button
-								verticalPadding={17}
-								horizontalPadding={85}
+								bigPadding
 								fontSize={14}
 								bold>
 								Write a review

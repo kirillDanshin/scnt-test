@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { brandColor, buttonHoverColor } from '@stylevars'
+import { brandColor, buttonHoverColor, mobileMax } from '@stylevars'
 
 /* eslint-disable no-confusing-arrow */
 
@@ -14,8 +14,8 @@ export default styled.button`
 	cursor: pointer;
 
 	background-color: ${brandColor};
-	padding: ${({ verticalPadding, horizontalPadding }) => (
-		`${verticalPadding || 15}px ${horizontalPadding || 43}px`
+	padding: ${({ bigPadding }) => (
+		bigPadding ? '17px 85px' : '15px 43px'
 	)};
 	color: #fff;
 	font-size: ${({ fontSize }) => fontSize || 16}px;
@@ -30,5 +30,10 @@ export default styled.button`
 
 	&:hover {
 		background-color: ${buttonHoverColor};
+	}
+
+	@media (max-width: ${mobileMax}) {
+		width: 100%;
+		padding: ${({ bigPadding }) => bigPadding ? '17px 43px' : '15px 43px'};
 	}
 `

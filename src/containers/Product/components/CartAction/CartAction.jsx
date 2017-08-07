@@ -31,7 +31,7 @@ export default class CartAction extends Component {
 						{isSubscription && <div styleName="description">30-day supply of this scent</div>}
 					</div>
 				</div>
-				<div>
+				<div styleName="buttonWrapper">
 					<Button>Add to {isSubscription ? 'queue' : 'cart'}</Button>
 				</div>
 			</div>
