@@ -13,19 +13,20 @@ import styles from './Reviews.pcss'
 	rating: 'product.rating',
 	reviews: 'reviews',
 })
-@cssModules(styles)
+@cssModules(styles, { allowMultiple: true })
 export default class Reviews extends Component {
 	render() {
 		const { rating } = this.props
 		let { reviews } = this.props
 		reviews = reviews.toJS()
 
-		const sortVariants = ['Most reсent', 'Popular']
+		const sortVariants = ['Most recent', 'Most helpful']
 		const avgRating = calculateAvgRating(rating)
 
 		return (
 			<div styleName="container">
-				<h2 styleName="title">Cartier eau de cartier essence de bois rating and reviews</h2>
+				<h2 styleName="title desktop">Cartier eau de cartier essence de bois rating and reviews</h2>
+				<h2 styleName="title mobile">Rating and reviews</h2>
 				<div styleName="heading">
 					<div styleName="wrapper">
 						<div styleName="headingLeft">
@@ -49,7 +50,7 @@ export default class Reviews extends Component {
 									/>
 							</div>
 						</div>
-						<div>
+						<div styleName="buttonWrapper">
 							<Button
 								verticalPadding={17}
 								horizontalPadding={85}

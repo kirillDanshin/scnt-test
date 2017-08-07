@@ -26,6 +26,33 @@
 	justify-content: space-between;
 	padding-bottom: 25px;
 	border-bottom: 1px solid #e6e6e6;
+
+	@media (width <= $tabletMax) {
+		border-bottom: none;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.titles {
+	@media (width <= $tabletMax) {
+		text-align: center;
+	}
+}
+
+.mobileHeaderWrapper {
+	display: none;
+
+	@media (width <= $tabletMax) {
+		display: initial;
+	}
+}
+
+.desktopHeaderWrapper {
+	@media (width <= $tabletMax) {
+		display: none;
+	}
 }
 
 .heading {
@@ -58,6 +85,10 @@
 	width: 100%;
 	text-align: right;
 	margin-top: 7px;
+
+	@media (width <= $tabletMax) {
+		text-align: center;
+	}
 }
 
 @keyframes show {
@@ -87,6 +118,10 @@
 .ratingWrapper {
 	position: relative;
 
+	@media (width <= $tabletMax) {
+		margin-top: 20px;
+	}
+
 	& .hoverWrapper {
 		position: absolute;
 		right: 0;
@@ -95,6 +130,11 @@
 		display: none;
 		opacity: 0;
 		animation: hide 500ms ease-in-out;
+
+		@media (width <= $tabletMax) {
+			bottom: -210px;
+			right: -50px;
+		}
 	}
 
 	&:hover .hoverWrapper {
@@ -114,6 +154,10 @@
 	border: 1px solid #c8c8c8;
 	transform: rotate(45deg);
 	z-index: -1;
+
+	@media (width <= $tabletMax) {
+		right: 80px;
+	}
 }
 
 .borderWhite {
@@ -123,6 +167,10 @@
 	width: 12px;
 	height: 1px;
 	background: #fff;
+
+	@media (width <= $tabletMax) {
+		right: 89px;
+	}
 }
 
 .ratingInfoWrapper {
@@ -136,6 +184,7 @@
 }
 
 .descriptionTitle {
+	text-align: center;
 	font-size: 18px;
 	line-height: 22px;
 	font-weight: 400;
@@ -179,6 +228,12 @@
 	padding: 12px 40px;
 	text-align: center;
 	cursor: pointer;
+
+	@media (width <= $tabletMax) {
+		padding: 15px;
+		font-size: 10px;
+		margin: 0 -1px 0 0;
+	}
 
 	&.first {
 		margin-left: 0;

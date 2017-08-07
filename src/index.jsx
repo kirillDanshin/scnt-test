@@ -2,8 +2,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
+import FastClick from 'fastclick'
 import store from '@store'
 import App from './app'
+
+document.addEventListener('DOMContentLoaded', () => {
+	FastClick.attach(document.body)
+}, false)
 
 const rootElement = document.getElementById('root')
 

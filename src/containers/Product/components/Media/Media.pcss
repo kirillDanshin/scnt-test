@@ -7,6 +7,12 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
+
+	@media (width <= $mobileMax) {
+		img {
+			width: 100%
+		}
+	}
 }
 
 .carouselWrapper {
@@ -68,7 +74,7 @@
 	right: -32px;
 
 	@media (width <= $tabletMax) {
-		top: 10px;
-		right: 0;
+		top: -70px;
+		right: 20px;
 	}
 }

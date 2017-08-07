@@ -21,6 +21,10 @@
 		@media (width <= 1020px) {
 			left: -30px;
 		}
+
+		@media (width <= $mobileMax) {
+			left: -20px;
+		}
 	}
 
 	&.next {
@@ -29,6 +33,12 @@
 
 		@media (width <= 1020px) {
 			right: -30px;
+		}
+
+		@media (width <= $mobileMax) {
+			// slider has a bug with width, including 5px of content margin which we don't need
+			// so -20 + 5 = -15px
+			right: -15px;
 		}
 	}
 }

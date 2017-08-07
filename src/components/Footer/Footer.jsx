@@ -6,6 +6,23 @@ import styles from './Footer.pcss'
 
 @cssModules(styles, { allowMultiple: true })
 export default class Footer extends Component {
+	state = {
+		dropdownsState: {},
+	}
+
+	toggleDropdown = name => () => {
+		const dropState = this.state.dropdownsState
+
+		this.setState({
+			dropdownsState: {
+				...dropState,
+				[name]: !dropState[name],
+			},
+		})
+	}
+
+	dropdownsState = name => !!this.state.dropdownsState[name]
+
 	render() {
 		const socials = ['fb', 'insta', 'pin', 'tumb', 'twi']
 
@@ -14,12 +31,15 @@ export default class Footer extends Component {
 
 		const shopLinks = ['Shop', 'Send a Gift', 'Shop perfumes', 'Shop colognes']
 
+		const aboutDropdownCx = `mobileDropdownContent ${this.dropdownsState('about') ? 'opened' : ''}`
+		const shopDropdownCx = `mobileDropdownContent ${this.dropdownsState('shop') ? 'opened' : ''}`
+
 		return (
 			<footer styleName="container">
 				<div styleName="wrapper">
 					<div styleName="top">
 						<div styleName="logoAndMenu">
-							<div>
+							<div styleName="desktopAbout">
 								<div styleName="logoWrapper">
 									<Logo light />
 								</div>
@@ -32,19 +52,27 @@ export default class Footer extends Component {
 									support@scentbird.com
 								</a>
 							</div>
-							<div>
-								<span styleName="title">About scentbird</span>
+							<div styleName={`mobileDropdown ${this.dropdownsState('about') ? 'opened' : ''}`}>
+								<span styleName="title" onClick={this.toggleDropdown('about')}>
+									About scentbird
+								</span>
 								<div styleName="line" />
-								{
-									aboutLinks.map((v, key) => (<a styleName="link" key={key}>{v}</a>))
-								}
+								<div styleName={aboutDropdownCx}>
+									{
+										aboutLinks.map((v, key) => (<a styleName="link" key={key}>{v}</a>))
+									}
+								</div>
 							</div>
-							<div>
-								<span styleName="title">Shop</span>
+							<div styleName={`mobileDropdown ${this.dropdownsState('shop') ? 'opened' : ''}`}>
+								<span styleName="title" onClick={this.toggleDropdown('shop')}>
+									Shop
+								</span>
 								<div styleName="line" />
-								{
-									shopLinks.map((v, key) => (<a styleName="link" key={key}>{v}</a>))
-								}
+								<div styleName={shopDropdownCx}>
+									{
+										shopLinks.map((v, key) => (<a styleName="link" key={key}>{v}</a>))
+									}
+								</div>
 							</div>
 						</div>
 						<div styleName="followAndSubscribe">
@@ -63,29 +91,32 @@ export default class Footer extends Component {
 										))
 									}
 								</div>
-								<span styleName="title">Subscribe</span>
-								<div styleName="subscribeWrapper">
-									<input
-										styleName="subscribeInput"
-										placeholder="Enter email address"
-										/>
-									<div styleName="arrowWrapper">
-										<i styleName="arrow"></i>
+								<div styleName="subscribe">
+									<span styleName="title">Subscribe</span>
+									<div styleName="subscribeWrapper">
+										<input
+											styleName="subscribeInput"
+											placeholder="Enter email address"
+											/>
+										<div styleName="arrowWrapper">
+											<i styleName="arrow"></i>
+										</div>
 									</div>
-								</div>
-								<div styleName="signUp">
-									<a styleName="signUpLink">Sign up </a>
-									to  get the latest updates on sales
+									<div styleName="signUp">
+										<a styleName="signUpLink">Sign up </a>
+										to  get the latest updates on sales
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div styleName="bottom">
+						<a styleName="mobileOnly invite">INVITE FRIENDS AND EARN</a>
 						<div styleName="copyWrapper">
 							<div>
 							SCENTBIRD
 							<i styleName="copy"></i>
-							2015, All right reserved. Made with love in NYC.
+							2015, All right reserved. <br styleName="mobileOnly" />Made with love in NYC.
 							</div>
 							<div styleName="bottomText">
 								Privacy Policy
@@ -93,7 +124,7 @@ export default class Footer extends Component {
 								Terms & Conditions
 							</div>
 						</div>
-						<div>
+						<div styleName="partners">
 							<img src={getLink('partners-logo.png')} alt="partners" />
 						</div>
 					</div>

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { brandColor, buttonHoverColor } from '@stylevars'
 
+/* eslint-disable no-confusing-arrow */
+
 export default styled.button`
 	background: none;
 	border: none;

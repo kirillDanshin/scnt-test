@@ -1,6 +1,10 @@
 .container {
 	padding-top: 90px;
 	padding-bottom: 100px;
+
+	@media (width <= $tabletMax) {
+		padding-bottom: 0;
+	}
 }
 
 .title {
@@ -9,6 +13,17 @@
 	font-weight: 400;
 	text-transform: uppercase;
 	margin-bottom: 37px;
+
+	&.desktop {
+		@media (width <= $tabletMax) {
+			display: none;
+		}
+	}
+	&.mobile {
+		@media (width > $tabletMax) {
+			display: none;
+		}
+	}
 }
 
 .heading {
@@ -24,14 +39,39 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media (width <= $tabletMax) {
+		flex-direction: column-reverse;
+	}
+}
+
+.buttonWrapper {
+	@media (width <= $tabletMax) {
+		margin-bottom: 20px;
+	}
 }
 
 .headingLeft {
 	display: flex;
+
+	@media (width <= $tabletMax) {
+		flex-direction: column-reverse;
+	}
 }
 
 .sortByWrapper {
 	padding-right: 47px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+	@media (width <= $tabletMax) {
+		margin: 20px 0;
+		padding: 0;
+		& .subTitle {
+			text-align: center;
+		}
+	}
 }
 
 .subTitle {
@@ -48,6 +88,10 @@
 
 .select {
 	padding-top: 13px;
+	
+	@media (width <= $tabletMax) {
+		margin: auto;
+	}
 }
 
 .heartsWrapper {

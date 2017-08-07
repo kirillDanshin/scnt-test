@@ -26,51 +26,57 @@ import styles from './Product.pcss'
 })
 @cssModules(styles, { allowMultiple: true })
 export default class Product extends Component {
+
+	getHeader = () => {
+		const { heading, title, subtitle, rating } = this.props
+		const avgRating = calculateAvgRating(rating)
+		
+		return (
+			<div styleName="headingWrapper">
+				<div styleName="titles">
+					<h1 styleName="heading">{heading}</h1>
+					<h2 styleName="title">{title}</h2>
+					<h3 styleName="subtitle">{subtitle}</h3>
+				</div>
+				<div styleName="ratingWrapper">
+					<Hearts count={avgRating} />
+					<div styleName="reviewsCount">10 reviews</div>
+					<div styleName="hoverWrapper">
+						<div styleName="triangle" />
+						<div styleName="borderWhite" />
+						<div styleName="ratingInfoWrapper">
+							<RatingInfo rating={rating} />
+						</div>
+					</div>
+				</div>
+			</div>
+		)
+	}
+
 	selectInfoIdx = idx => () => (actions.product.selectInfoIdx(idx))
 
 	render() {
 		const {
-			heading,
-			title,
-			subtitle,
 			description,
 			media,
 			selectedMediaIdx,
-			rating,
 			options,
 			selectedOptionIdx,
 			info,
 			selectedInfoIdx,
 		} = this.props
 
-		const avgRating = calculateAvgRating(rating)
 		const selectedOption = options[selectedOptionIdx]
 		const selectedInfoContent = info[selectedInfoIdx].content
 
 		return (
 			<div styleName="container">
+				<div styleName="mobileHeaderWrapper">{this.getHeader()}</div>
 				<div styleName="mediaWrapper">
 					<Media media={media} selectedMediaIdx={selectedMediaIdx} />
 				</div>
 				<div>
-					<div styleName="headingWrapper">
-						<div>
-							<h1 styleName="heading">{heading}</h1>
-							<h2 styleName="title">{title}</h2>
-							<h3 styleName="subtitle">{subtitle}</h3>
-						</div>
-						<div styleName="ratingWrapper">
-							<Hearts count={avgRating} />
-							<div styleName="reviewsCount">10 reviews</div>
-							<div styleName="hoverWrapper">
-								<div styleName="triangle" />
-								<div styleName="borderWhite" />
-								<div styleName="ratingInfoWrapper">
-									<RatingInfo rating={rating} />
-								</div>
-							</div>
-						</div>
-					</div>
+					<div styleName="desktopHeaderWrapper">{this.getHeader()}</div>
 					<CartAction option={selectedOption} />
 					<Options options={options} selectedOptionIdx={selectedOptionIdx} />
 					<div styleName="descriptionWrapper">
